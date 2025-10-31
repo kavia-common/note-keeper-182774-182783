@@ -3,11 +3,14 @@ import React from "react";
 // PUBLIC_INTERFACE
 export const NavBar: React.FC = () => {
   /** Top navigation with logo and app title. */
+  const publicUrl = (process.env.PUBLIC_URL || "").replace(/\/+$/, "");
+  const logoSrc = `${publicUrl}/assets/logo.png`;
+
   return (
     <nav className="navbar" role="navigation" aria-label="Top Navigation">
       <div className="nav-inner">
         <img
-          src="/assets/logo.png"
+          src={logoSrc}
           alt="Notes Logo"
           width="28"
           height="28"
