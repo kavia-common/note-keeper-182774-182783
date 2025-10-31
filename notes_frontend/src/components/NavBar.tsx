@@ -1,19 +1,17 @@
 import React from "react";
+import logoUrl from "../assets/logo.png";
 
 // PUBLIC_INTERFACE
 export const NavBar: React.FC = () => {
-  /** Top navigation with logo and app title. */
-  const publicUrl = (process.env.PUBLIC_URL || "").replace(/\/+$/, "");
-  const logoSrc = `${publicUrl}/assets/logo.png`;
-
+  /** Top navigation with logo and app title. Uses bundled logo asset for reliable pathing. */
   return (
     <nav className="navbar" role="navigation" aria-label="Top Navigation">
       <div className="nav-inner">
         <img
-          src={logoSrc}
-          alt="Notes Logo"
-          width="28"
-          height="28"
+          src={logoUrl}
+          alt="Ocean Notes logo"
+          width={28}
+          height={28}
           style={{ borderRadius: 6, boxShadow: "var(--shadow-sm)" }}
         />
         <span className="nav-title">Ocean Notes</span>

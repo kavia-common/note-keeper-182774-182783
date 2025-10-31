@@ -1,14 +1,18 @@
 import React from "react";
+import logoUrl from "../assets/logo.png";
 
 // PUBLIC_INTERFACE
 export const EmptyState: React.FC<{ onCreate: () => void }> = ({ onCreate }) => {
-  /** Empty state prompting to create the first note. */
-  const publicUrl = (process.env.PUBLIC_URL || "").replace(/\/+$/, "");
-  const logoSrc = `${publicUrl}/assets/logo.png`;
-
+  /** Empty state prompting to create the first note. Displays the real app logo. */
   return (
     <div className="empty-state" role="status" aria-live="polite">
-      <img src={logoSrc} alt="" width="54" height="54" style={{ opacity: 0.8, borderRadius: 10 }} />
+      <img
+        src={logoUrl}
+        alt="Ocean Notes logo"
+        width={54}
+        height={54}
+        style={{ opacity: 0.9, borderRadius: 10 }}
+      />
       <h2 style={{ margin: "12px 0 8px" }}>No note selected</h2>
       <p style={{ margin: 0, color: "var(--color-muted)" }}>Create a new note to get started.</p>
       <div style={{ marginTop: 16 }}>
